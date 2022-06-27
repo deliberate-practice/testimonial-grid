@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+body{
+    min-height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+    margin: 0;
+    padding: 0;
+}
+.card__container{
+    padding: 2em 1em;
+    display: grid;
+    gap: 2em;
+}
+.card{
+    /* border: 1px dashed green; */
+    padding: 2em;
+    border-radius: .7em;
+}
+.card__header{
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+.card__header > img{
+    border-radius: 50%;
+    border:  2px solid transparent;
+}
+.card__header p:last-child{
+    font-size: .9rem;
+    color: hsl(0, 0%, 81%);
+    font-weight: 500;
+}
+.card__title{
+    font-size: 1.7rem;
+    margin: 1em 0;
+    font-weight: 600;
+}
+.card__description{
+    font-size: 13px;
+    font-weight: 500;
+    margin: 1em 0;
+    color: hsl(0, 0%, 81%);
+}
+
+/* Card specific styles */
+.card.white-bg{
+    background-color: #FFF;
+    color: hsl(217, 19%, 35%);
+}
+main .card__container:first-child .card:first-child{
+    background-color: hsl(263, 55%, 52%);
+    color: #FFF;
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 90% 1em;
+}
+/* second card */
+main .card__container:first-child .card:nth-child(2){
+    background-color: hsl(217, 19%, 35%);
+    color: #FFF;
+}
+/* last card */
+main .card__container:first-child .card:nth-child(4){
+    background-color: hsl(219, 29%, 14%);
+    color: #FFF;
+}
+
+@media(min-width: 1000px){
+    .container > main{
+        display: flex;
+    }
+    main .card__container:last-child{
+        flex: .3;
+    }
+    main .card__container:first-child{
+        flex: .7;
+        grid-template-columns: 2fr 1fr;
+        grid-auto-rows: minmax(50vh, auto);
+    }
+    main .card__container:first-child .card{
+        /* height: 50vh; */
+    }
+}
